@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<Packages>
+	<Individual name="Designer">
+		<Name>Designer</Name>
+		<Description>A BrAIn-API add-on that adds routes to help people design. This makes routes to generate colour palettes, generates fonts and even send previews of those to show how they look.</Description>
+		<ID />
+		<FilePath>/packages/ID</FilePath>
+	</Individual>
+	<Indvidual name="name">
+		<Name>name</Name>
+		<Description>description</Description>
+		<ID>82851949872</ID>
+		<FilePath>/packages/82851949872</FilePath>
+	</Indvidual>
+	<Indvidual name="name">
+		<Name>name</Name>
+		<Description>description</Description>
+		<ID>84578032161</ID>
+		<FilePath>/packages/84578032161</FilePath>
+	</Indvidual>
+	<Indvidual name="name">
+		<Name>name</Name>
+		<Description>description</Description>
+		<ID>86304114450</ID>
+		<FilePath>/packages/86304114450</FilePath>
+	</Indvidual>
+	<Indvidual name="name">
+		<Name>name</Name>
+		<Description>description</Description>
+		<ID>89756279028</ID>
+		<FilePath>/packages/89756279028</FilePath>
+	</Indvidual>
+	<Indvidual name="name">
+		<Name>name</Name>
+		<Description>description</Description>
+		<ID>91482361317</ID>
+		<FilePath>/packages/91482361317</FilePath>
+	</Indvidual>
+</Packages>
