@@ -3,8 +3,9 @@ packages/
 nlohmann/
 .vscode/
 pugixml/*
-packages/*
 nlohmann/*
 .vscode/*
 seed.txt
 package.txt
+pcre/
+pcr/*

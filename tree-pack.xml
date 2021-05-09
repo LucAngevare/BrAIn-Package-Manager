@@ -1,9 +1,15 @@
 <?xml version="1.0"?>
 <Packages>
+	<Indvidual name="Hallo">
+		<Name>hallo</Name>
+		<Description>hallo</Description>
+		<ID>82851949872</ID>
+		<FilePath>/packages/82851949872</FilePath>
+	</Indvidual>
 	<Individual name="Designer">
 		<Name>Designer</Name>
 		<Description>A BrAIn-API add-on that adds routes to help people design. This makes routes to generate colour palettes, generates fonts and even send previews of those to show how they look.</Description>
-		<ID />
+		<ID>82851949872</ID>
 		<FilePath>/packages/ID</FilePath>
 	</Individual>
 	<Indvidual name="name">
@@ -35,5 +41,35 @@
 		<Description>description</Description>
 		<ID>91482361317</ID>
 		<FilePath>/packages/91482361317</FilePath>
+	</Indvidual>
+	<Indvidual name="name">
+		<Name>name</Name>
+		<Description>description</Description>
+		<ID>108743184207</ID>
+		<FilePath>/packages/108743184207</FilePath>
+	</Indvidual>
+	<Indvidual name="name">
+		<Name>name</Name>
+		<Description>description</Description>
+		<ID>110469266496</ID>
+		<FilePath>/packages/110469266496</FilePath>
+	</Indvidual>
+	<Indvidual name="name">
+		<Name>name</Name>
+		<Description>description</Description>
+		<ID>112195348785</ID>
+		<FilePath>/packages/112195348785</FilePath>
+	</Indvidual>
+	<Indvidual name="name">
+		<Name>name</Name>
+		<Description>description</Description>
+		<ID>113921431074</ID>
+		<FilePath>/packages/113921431074</FilePath>
+	</Indvidual>
+	<Indvidual name="name">
+		<Name>name</Name>
+		<Description>description</Description>
+		<ID>115647513363</ID>
+		<FilePath>/packages/115647513363</FilePath>
 	</Indvidual>
 </Packages>
