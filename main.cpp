@@ -95,6 +95,16 @@ std::string generate_ID() {
     else generate_ID();
 }
 
+void replaceAll(std::string& str, const std::string& from, const std::string& to) {
+    if(from.empty())
+        return;
+    size_t start_pos = 0;
+    while((start_pos = str.find(from, start_pos)) != std::string::npos) {
+        str.replace(start_pos, from.length(), to);
+        start_pos += to.length();
+    }
+}
+
 int main() {
     uWS::App().get("/get/:name", [](auto *res, auto *req) {
         try {
@@ -156,6 +166,8 @@ int main() {
                 if (FileData.is_open()) {
                     std::cout << "Opened file" << std::endl;
                     while (getline(FileData, line)) {
+                        std::string newFile;
+                        replaceAll(line, "\n", "{thisIsALineBreak}");
                         std::vector<char> lineVector(line.begin(), line.end());
                         PackageContent << base64::encode(lineVector);
                     }

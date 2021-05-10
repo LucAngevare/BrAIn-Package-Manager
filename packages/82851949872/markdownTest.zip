@@ -1,0 +1,18 @@
+Dit zijn de bestanden die nodig zijn voor de server. Ik gebruik Ubuntu 20.04 hiervoor maar als het goed is, is het ook mogelijk in Windows.
+
+De bash script om het te compileren:
+
+```
+g++ -Wall -pthread -c main.cpp -o main.o && g++ -Wall -pthread main.o -o main -lboost_system -lboost_filesystem -lboost_thread -lboost_chrono -lboost_timer -lboost_coroutine && chmod u+x ./main && ./main 3538
+```
+
+De curl commando om het te testen:
+
+* Een bestand van >1MB:
+```
+curl -v -F ZIP=@./real-world-test.zip http://127.0.0.1:3538/give
+```
+* Een bestand van <1MB:
+```
+curl -v -F ZIP=@./tree-pack.xml http://127.0.0.1:3538/give
+```

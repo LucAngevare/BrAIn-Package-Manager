@@ -1,5 +1,4 @@
 pugixml/
-packages/
 nlohmann/
 .vscode/
 pugixml/*
@@ -8,4 +7,4 @@ nlohmann/*
 seed.txt
 package.txt
 pcre/
-pcr/*
+pcre/*
