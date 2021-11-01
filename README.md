@@ -1,4 +1,6 @@
-# BrAIn Package Manager
+# BrAIn Package Manager - !Work in progress!
+
+This is definitely a project I want to finish in the future but I just don't have the time, documentation nor the resources to finish it in it's current state. While the uWebSockets.js documentation is full and complete, the C++ version (the version that was actually first) basically doesn't have any proper documentation. I might be the only one who shares this opinion but so be it. Once the server is done I need to make an API and add a public view so people can actually see what packages there are along with documentation.
 
 [![LucAngevare - BrAIn-Package-Manager](https://img.shields.io/static/v1?label=LucAngevare&message=BrAIn-Package-Manager&color=blue&logo=github)](https://github.com/LucAngevare/BrAIn-Package-Manager)
 [![stars - BrAIn-Package-Manager](https://img.shields.io/github/stars/LucAngevare/BrAIn-Package-Manager?style=social)](https://github.com/LucAngevare/BrAIn-Package-Manager)
