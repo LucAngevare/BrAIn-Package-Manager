@@ -17,7 +17,6 @@
 #include <sstream>
 #include <stdlib.h>
 #include <time.h>
-#include "base64/base64.hpp"
 
 namespace fs = std::filesystem;
 using json = nlohmann::json;
@@ -106,7 +105,7 @@ void replaceAll(std::string& str, const std::string& from, const std::string& to
 }
 
 int main() {
-    uWS::App().get("/get/:name", [](auto *res, auto *req) {
+    uWS::App().post("/get/:name", [](auto *res, auto *req) {
         try {
             res->onAborted([=]() {
                 std::cout << "what." << std::endl; 
@@ -158,31 +157,25 @@ int main() {
                         continue;
                     }
                 }
-                std::cout << "Opening file" << std::endl;
-                std::ifstream FileData("./packages/" + (std::string)(soughtPackage.child("ID").child_value()) + "/main.zip");
-                std::stringstream PackageContent;
-                std::string line;
 
-                if (FileData.is_open()) {
-                    std::cout << "Opened file" << std::endl;
-                    while (getline(FileData, line)) {
-                        std::string newFile;
-                        replaceAll(line, "\n", "{thisIsALineBreak}");
-                        std::vector<char> lineVector(line.begin(), line.end());
-                        PackageContent << base64::encode(lineVector);
-                    }
-                    FileData.close();
-                    std::cout << "Closed file" << std::endl;
-
-                    obj["file"] = PackageContent.str();
-                    std::string objectString = obj.dump();
-                    std::cout << objectString << std::endl;
-                    res->writeHeader("Content-Type", "application/json; charset=utf-8")->end(objectString);
-                }
+                obj["static_file_location"] = "/download/" + (std::string)(soughtPackage.child("ID").child_value());
+                std::string objectString = obj.dump();
+                std::cout << objectString << std::endl;
+                res->writeHeader("Content-Type", "application/json; charset=utf-8")->end(objectString);
             }
         } catch (const std::exception& e) {
             std::cout << "Err: " << e.what();
         }
+    }).get("/download/:id", [](auto *res, auto *req) {
+        std::string packageID{req->getParameter(0)};
+
+        std::ifstream packageZIP("./packages/" + packageID, std::ios_base::binary);
+        if(!packageZIP.good()) {
+            res->writeStatus("400")->writeHeader("Content-Type", "application/json;")->end("{success: false, reason: \"Error while opening input file!\"}"); //TODO: Error handler
+        }
+        res->cork([&](auto *res, auto *packageZIP) {
+            res->end(std::string{packageZIP});
+        });
     }).post("/give", [](auto *res, auto *req) {
         const uint64_t contentLength = std::stoi(std::string(req->getHeader("content-length")));
         json headerObject;
